@@ -29,4 +29,6 @@ platform:     web
 
 Keys and options are listed at the top of the skill. If you keep a `~/.claude/design-crit/calibration.md`, the skill reads it before writing and appends what you keep, cut and add after each crit, so it learns your taste.
 
+**Want a named variant** (a crit for one course, client or team, with its own trigger and rules)? See [WRAPPER.md](WRAPPER.md). Hand it to your agent and it will set one up with you.
+
 Optional connectors: Figma (to read Figma files), Mobbin (for shipped-app references).
