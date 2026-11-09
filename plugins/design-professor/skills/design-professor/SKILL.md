@@ -1,9 +1,9 @@
 ---
-name: design-crit
+name: design-professor
 description: "Critique UI and product design work (Figma files, decks, PDFs, screenshots, or live prototype URLs, including work generated with Claude) using parallel specialist reviewers for platform conventions, accessibility, flow, craft and AI slop, then return a verified, prioritized punch list. Use for 'crit this', 'review my design', 'what's wrong with this screen', 'does this look AI-made', or a review pass before sharing work."
 ---
 
-# Design Crit
+# Design Professor
 
 A senior-designer review of screen-based work. Specialist subagents widen what gets noticed; you verify every finding against what's actually on screen and write the final critique. The goal is fewer, truer comments, not more.
 
@@ -11,7 +11,7 @@ A senior-designer review of screen-based work. Specialist subagents widen what g
 
 Read this block first. These are defaults. Don't edit this file to change them: it ships in a plugin and updates overwrite it. Overrides apply in this order, later wins:
 1. The defaults below.
-2. `~/.claude/design-crit/config.md`, if it exists (same keys, one per line).
+2. `~/.claude/design-professor/config.md`, if it exists (same keys, one per line).
 3. A wrapper skill that invoked this one (for example an instructor's personal version).
 4. Anything the person says in the request ("quick pass", "for a client").
 
@@ -24,7 +24,7 @@ volume:       12-20         # comments per screen set or section; decks 8-15
 praise_share: 1 in 6        # self mode: 0, just say what's working in one line
 reviewers:    full          # full | quick (flow + craft only) | a list of tags
 output:       list          # list | page (Artifact review page) | figma (post comments)
-calibration:  ~/.claude/design-crit/calibration.md   # used only if it exists; kept outside the plugin
+calibration:  ~/.claude/design-professor/calibration.md   # used only if it exists; kept outside the plugin
 platform:     auto          # ios | android | web | auto (infer from frame sizes)
 ```
 

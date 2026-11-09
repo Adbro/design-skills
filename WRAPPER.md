@@ -1,6 +1,6 @@
-# Make your own design-crit (a thin wrapper)
+# Make your own design-professor (a thin wrapper)
 
-**For people:** hand this file to your Claude Code agent and say *"set up a design-crit wrapper for me using this."* It will ask you a few questions and write the skill. Or read on and do it by hand; it's one short file.
+**For people:** hand this file to your Claude Code agent and say *"set up a design-professor wrapper for me using this."* It will ask you a few questions and write the skill. Or read on and do it by hand; it's one short file.
 
 **For the agent:** the rest of this file is your instructions. Follow the steps in order.
 
@@ -8,24 +8,24 @@
 
 ## What a wrapper is, and when to make one
 
-design-crit ships in a plugin. Plugin updates overwrite its files, so nobody should edit it. There are two places to put your own preferences instead:
+design-professor ships in a plugin. Plugin updates overwrite its files, so nobody should edit it. There are two places to put your own preferences instead:
 
 | You want | Use |
 |---|---|
-| Different defaults for every crit you run (always quick, always web) | `~/.claude/design-crit/config.md`. No wrapper needed. |
+| Different defaults for every crit you run (always quick, always web) | `~/.claude/design-professor/config.md`. No wrapper needed. |
 | A **named variant** with its own trigger and rules: a crit for one course, one client, one team's design system, a house voice | A wrapper skill |
 
-A wrapper is a small skill that calls `design-crit:design-crit` and hands it overrides. It holds only what's different. The checklist, reviewers and skeptic pass stay in the plugin and keep updating.
+A wrapper is a small skill that calls `design-professor:design-professor` and hands it overrides. It holds only what's different. The checklist, reviewers and skeptic pass stay in the plugin and keep updating.
 
 Override order, later wins: plugin defaults → `config.md` → **wrapper** → what the person says in the request.
 
 ## Step 1. Check the plugin is installed
 
-Run `claude plugin list` and look for `design-crit@design-skills`. If it's missing, tell the person and offer to run:
+Run `claude plugin list` and look for `design-professor@design-skills`. If it's missing, tell the person and offer to run:
 
 ```
 claude plugin marketplace add Adbro/design-skills
-claude plugin install design-crit@design-skills
+claude plugin install design-professor@design-skills
 ```
 
 Don't continue without it. A wrapper without the base skill does nothing.
@@ -34,7 +34,7 @@ Don't continue without it. A wrapper without the base skill does nothing.
 
 Ask only what you can't infer. Suggest a default for each one.
 
-1. **Name.** Short and kebab-case, like `studio-crit` or `ixd-201-crit`. It must not be `design-crit`.
+1. **Name.** Short and kebab-case, like `studio-crit` or `ixd-201-crit`. It must not be `design-professor`.
 2. **When should it run instead of the regular crit?** Turn this into trigger phrases ("crit this student project", "review for ACME"). Keep them narrower than the base skill's, or the two will compete.
 3. **Which settings change?** Show them the keys and options:
    - `audience`: self | student | client | teammate
@@ -45,7 +45,7 @@ Ask only what you can't infer. Suggest a default for each one.
    - `output`: list | page | figma
    - `platform`: ios | android | web | auto
 4. **Context the crit should always know.** A course brief and rubric, a client's brand rules, a design-system doc, things to never comment on. Get it pasted, or get file paths.
-5. **Calibration file.** Should this variant learn separately from their own crits? Default yes, at `~/.claude/design-crit/<name>-calibration.md`.
+5. **Calibration file.** Should this variant learn separately from their own crits? Default yes, at `~/.claude/design-professor/<name>-calibration.md`.
 6. **Scope.** Just them (`~/.claude/skills/`), or a project or team (`.claude/skills/` in a repo, committed so others get it)?
 
 ## Step 3. Write the skill
@@ -55,12 +55,12 @@ Create `<scope>/skills/<name>/SKILL.md` from this template. Fill it in, and dele
 ````markdown
 ---
 name: <name>
-description: "<One sentence on what this variant is for.> Use for '<trigger 1>', '<trigger 2>'. Wraps design-crit with <audience/context> settings."
+description: "<One sentence on what this variant is for.> Use for '<trigger 1>', '<trigger 2>'. Wraps design-professor with <audience/context> settings."
 ---
 
 # <Name>
 
-A variant of design-crit. Invoke the `design-crit:design-crit` skill with the Skill tool and run it as written, with these overrides. They sit at level 3 of its override order: they beat ~/.claude/design-crit/config.md and lose to anything the person says in the request.
+A variant of design-professor. Invoke the `design-professor:design-professor` skill with the Skill tool and run it as written, with these overrides. They sit at level 3 of its override order: they beat ~/.claude/design-professor/config.md and lose to anything the person says in the request.
 
 ## Overrides
 
@@ -69,7 +69,7 @@ audience:     student
 voice:        plain
 volume:       8-12
 reviewers:    full
-calibration:  ~/.claude/design-crit/<name>-calibration.md
+calibration:  ~/.claude/design-professor/<name>-calibration.md
 ```
 
 ## Always-on context
@@ -82,16 +82,16 @@ calibration:  ~/.claude/design-crit/<name>-calibration.md
 ````
 
 Rules for writing it:
-- **Don't copy design-crit's body into the wrapper.** If you copy it, the wrapper won't get the plugin's updates.
+- **Don't copy design-professor's body into the wrapper.** If you copy it, the wrapper won't get the plugin's updates.
 - Don't edit anything under `~/.claude/plugins/`.
 - If a calibration file is set and doesn't exist yet, create it empty. The skill appends to it after each crit.
 - Keep the whole file under ~60 lines. If it's growing, move the content into a referenced file.
 
 ## Step 4. Check it
 
-1. Run `claude -p "List available skills whose name contains '<name>' or 'design-crit'. Names only."` from a neutral folder. Both `<name>` and `design-crit:design-crit` should appear.
+1. Run `claude -p "List available skills whose name contains '<name>' or 'design-professor'. Names only."` from a neutral folder. Both `<name>` and `design-professor:design-professor` should appear.
 2. Tell the person what you made: the path, the overrides, and the trigger phrases. Then tell them to try it in a **new** session, since skills load when a session starts.
-3. If the person also has a standalone `design-crit` skill (in `~/.claude/skills/` or uploaded to their Claude account), point it out. It competes with the plugin version and they may want to remove it. Don't delete it yourself.
+3. If the person also has a standalone `design-professor` skill (in `~/.claude/skills/` or uploaded to their Claude account), point it out. It competes with the plugin version and they may want to remove it. Don't delete it yourself.
 
 ## Changing it later
 
