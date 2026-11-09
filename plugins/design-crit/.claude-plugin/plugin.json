@@ -6,5 +6,6 @@
     "name": "Adam Brodowski"
   },
   "homepage": "https://github.com/Adbro/design-skills",
-  "repository": "https://github.com/Adbro/design-skills"
+  "repository": "https://github.com/Adbro/design-skills",
+  "license": "MIT"
 }
