@@ -15,6 +15,8 @@ Update later with `/plugin marketplace update design-skills`.
 
 Ask for a crit on a Figma link, deck, PDF, screenshots, or a live prototype URL: "crit this", "review my design", "does this look AI-made".
 
+It talks like a studio professor at the crit wall: a one-line verdict up top, pointed questions on the findings that matter, and an "Office hours" close with the one thing to fix first. Nits stay terse. Set `voice: plain` to turn the persona off.
+
 Defaults are set for reviewing your own work: a direct punch list, the AI-slop report up top, and a paste-ready fix prompt for the Claude session that built it.
 
 **Your settings live outside the plugin**, so updates never overwrite them. Create `~/.claude/design-professor/config.md` with any keys you want to change:

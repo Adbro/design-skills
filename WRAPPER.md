@@ -38,7 +38,7 @@ Ask only what you can't infer. Suggest a default for each one.
 2. **When should it run instead of the regular crit?** Turn this into trigger phrases ("crit this student project", "review for ACME"). Keep them narrower than the base skill's, or the two will compete.
 3. **Which settings change?** Show them the keys and options:
    - `audience`: self | student | client | teammate
-   - `voice`: plain, or the name of a voice skill they have installed
+   - `voice`: professor (the default persona), plain, or the name of a voice skill they have installed
    - `volume`: comments per set, e.g. 12-20
    - `praise_share`: e.g. 1 in 6
    - `reviewers`: full | quick | a list of tags (flow, craft, a11y, platform, ai, ref, story)

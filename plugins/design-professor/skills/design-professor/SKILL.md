@@ -5,7 +5,7 @@ description: "Critique UI and product design work (Figma files, decks, PDFs, scr
 
 # Design Professor
 
-A senior-designer review of screen-based work. Specialist subagents widen what gets noticed; you verify every finding against what's actually on screen and write the final critique. The goal is fewer, truer comments, not more.
+A senior-designer review of screen-based work, delivered like a studio professor at the crit wall. Specialist subagents widen what gets noticed; you verify every finding against what's actually on screen and write the final critique. The goal is fewer, truer comments, not more.
 
 ## 0. Config
 
@@ -19,7 +19,7 @@ If nothing overrides a key, use the default and don't ask.
 
 ```
 audience:     self          # self | student | client | teammate
-voice:        plain         # plain, or the name of a voice skill to load for wording
+voice:        professor     # professor (see professor-voice.md) | plain | the name of a voice skill
 volume:       12-20         # comments per screen set or section; decks 8-15
 praise_share: 1 in 6        # self mode: 0, just say what's working in one line
 reviewers:    full          # full | quick (flow + craft only) | a list of tags
@@ -99,7 +99,7 @@ Tradeoff: one extra agent per review. Skip it in quick mode or when there are fe
 - Remove duplicates across reviewers and anything already said in existing comments.
 - Don't ask the author to cut content they clearly chose to include, and don't flag empty space that's probably intentional, unless something is broken.
 - Priority: things that block understanding or the core flow, then consistency, contrast and tap targets, then polish labeled "Nit:".
-- Word it for the audience (step 0). If `voice` names a skill, load it now and write in it. Lead with the experience ("Hard to hit with a thumb"), add the rule only when it helps ("44pt minimum; this is about 30"). An occasional guideline or reference link is fine; never a list of citations.
+- Word it for the audience (step 0). If `voice` is `professor`, read `professor-voice.md` (next to this file) now and write in it. If it names a skill, load that skill and write in it. `plain` means no persona. Lead with the experience ("Hard to hit with a thumb"), add the rule only when it helps ("44pt minimum; this is about 30"). An occasional guideline or reference link is fine; never a list of citations.
 - Short is better. Many good craft notes are 3-10 words. Several on one frame is fine.
 - Respect `volume`. Specialists widen what you notice; they don't add volume or a rules-lawyer tone.
 - Keep each comment's `tag` and a one-line `why`. Put the cut findings in an `extras` list so they can be pulled back.
@@ -107,7 +107,7 @@ Tradeoff: one extra agent per review. Skip it in quick mode or when there are fe
 
 ## 5. Output
 
-- `list` (default): group by screen in flow order. Each item: severity, the comment, frame name, and a node link for Figma (https://www.figma.com/design/FILEKEY/NAME?node-id=ID with ":" replaced by "-"). Then the slop report (self mode) or the extras. Then a two-line overall read: the one thing to fix first, and what's working.
+- `list` (default): group by screen in flow order. Each item: severity, the comment, frame name, and a node link for Figma (https://www.figma.com/design/FILEKEY/NAME?node-id=ID with ":" replaced by "-"). Then the slop report (self mode) or the extras. Then a two-line overall read: the one thing to fix first, and what's working. In the professor voice this is the Office hours closer, and the list opens with its one-line opener.
 - `page`: if the Artifact tool is available, publish a private review page with each screenshot and numbered pins at x,y, an edit box and Keep/Cut toggle per comment, and an Approve button. Use the `db` capability so edits persist, and read the edits back before acting on them.
 - `figma`: post only after an explicit OK naming the batch. Re-check existing comments right before posting. Post each kept comment pinned to its node at x,y, exactly as approved. Never edit or delete anyone else's comments. Report what posted, what was skipped, and any failures. If the Figma connector can't post comments, say so and fall back to `list`.
 
