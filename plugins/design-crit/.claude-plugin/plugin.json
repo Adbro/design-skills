@@ -1,0 +1,10 @@
+{
+  "name": "design-crit",
+  "version": "0.1.0",
+  "description": "Senior-designer critique of UI work (Figma, decks, PDFs, screenshots, live prototypes) with parallel specialist reviewers and a verified punch list.",
+  "author": {
+    "name": "Adam Brodowski"
+  },
+  "homepage": "https://github.com/Adbro/design-skills",
+  "repository": "https://github.com/Adbro/design-skills"
+}

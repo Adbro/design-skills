@@ -1,0 +1,32 @@
+# design-skills
+
+Claude skills for design work, by Adam Brodowski.
+
+## Install (Claude Code)
+
+```
+/plugin marketplace add Adbro/design-skills
+/plugin install design-crit@design-skills
+```
+
+Update later with `/plugin marketplace update design-skills`.
+
+## design-crit
+
+Ask for a crit on a Figma link, deck, PDF, screenshots, or a live prototype URL: "crit this", "review my design", "does this look AI-made".
+
+Defaults are set for reviewing your own work: a direct punch list, the AI-slop report up top, and a paste-ready fix prompt for the Claude session that built it.
+
+**Your settings live outside the plugin**, so updates never overwrite them. Create `~/.claude/design-crit/config.md` with any keys you want to change:
+
+```
+audience:     self
+voice:        plain
+volume:       12-20
+reviewers:    quick
+platform:     web
+```
+
+Keys and options are listed at the top of the skill. If you keep a `~/.claude/design-crit/calibration.md`, the skill reads it before writing and appends what you keep, cut and add after each crit, so it learns your taste.
+
+Optional connectors: Figma (to read Figma files), Mobbin (for shipped-app references).

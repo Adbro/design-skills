@@ -1,0 +1,14 @@
+{
+  "name": "design-skills",
+  "owner": {
+    "name": "Adam Brodowski"
+  },
+  "description": "Claude skills for design work by Adam Brodowski.",
+  "plugins": [
+    {
+      "name": "design-crit",
+      "source": "./plugins/design-crit",
+      "description": "Senior-designer critique of UI work (Figma, decks, PDFs, screenshots, live prototypes) with parallel specialist reviewers and a verified punch list."
+    }
+  ]
+}
