@@ -1,0 +1,11 @@
+{
+  "name": "major-studio-crit",
+  "version": "0.2.0",
+  "description": "Adam's Major Studio wrapper: drafts instructor comments on student Figma files and decks in his voice, gets his OK, then posts them pinned to frames.",
+  "author": {
+    "name": "Adam Brodowski"
+  },
+  "homepage": "https://github.com/Adbro/design-skills",
+  "repository": "https://github.com/Adbro/design-skills",
+  "license": "MIT"
+}

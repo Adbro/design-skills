@@ -6,9 +6,14 @@
   "description": "Claude skills for design work by Adam Brodowski.",
   "plugins": [
     {
-      "name": "design-professor",
-      "source": "./plugins/design-professor",
-      "description": "Senior-designer critique of UI work (Figma, decks, PDFs, screenshots, live prototypes) with parallel specialist reviewers and a verified punch list."
+      "name": "professor-brodo",
+      "source": "./plugins/professor-brodo",
+      "description": "Tap in Professor Brodo to crit your design work (Figma, decks, PDFs, screenshots, live prototypes): parallel specialist reviewers, a verified punch list, studio-professor voice."
+    },
+    {
+      "name": "major-studio-crit",
+      "source": "./plugins/major-studio-crit",
+      "description": "Adam's Major Studio wrapper: drafts instructor comments on student Figma files and decks in his voice, gets his OK, then posts them pinned to frames."
     }
   ]
 }

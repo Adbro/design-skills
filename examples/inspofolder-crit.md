@@ -1,6 +1,6 @@
 # Example crit: inspofolder.com
 
-A real run of design-professor 0.3.0 with its defaults: `audience: self`, `voice: professor`, `reviewers: full`. The input was one desktop screenshot of [inspofolder.com](https://inspofolder.com), the author's private inspiration archive: a dark masonry wall of about 7,400 saved references with semantic search and a floating dock at the bottom.
+A real run of professor-brodo 0.3.0 with its defaults: `audience: self`, `voice: professor`, `reviewers: full`. The input was one desktop screenshot of [inspofolder.com](https://inspofolder.com), the author's private inspiration archive: a dark masonry wall of about 7,400 saved references with semantic search and a floating dock at the bottom.
 
 Five reviewers ran: flow, craft, accessibility, platform and AI-slop. The Mobbin reference scout was skipped because no Mobbin connector was available. Instead of the skeptic agent, the findings were checked against the site's own code, which threw out six claims (listed at the end). What follows is the crit as delivered.
 
