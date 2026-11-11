@@ -1,16 +1,16 @@
-# design-skills
+# professor-brodo
 
 Claude skills for design work, by Adam Brodowski.
 
 ## Install (Claude Code)
 
 ```
-/plugin marketplace add Adbro/design-skills
-/plugin install professor-brodo@design-skills
-/plugin install major-studio-crit@design-skills   # optional, Adam's class wrapper
+/plugin marketplace add Adbro/professor-brodo
+/plugin install professor-brodo@professor-brodo
+/plugin install major-studio-crit@professor-brodo   # optional, Adam's class wrapper
 ```
 
-Update later with `/plugin marketplace update design-skills`.
+Update later with `/plugin marketplace update professor-brodo`.
 
 ## professor-brodo
 

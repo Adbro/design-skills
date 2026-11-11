@@ -21,11 +21,11 @@ Override order, later wins: plugin defaults → `config.md` → **wrapper** → 
 
 ## Step 1. Check the plugin is installed
 
-Run `claude plugin list` and look for `professor-brodo@design-skills`. If it's missing, tell the person and offer to run:
+Run `claude plugin list` and look for `professor-brodo@professor-brodo`. If it's missing, tell the person and offer to run:
 
 ```
-claude plugin marketplace add Adbro/design-skills
-claude plugin install professor-brodo@design-skills
+claude plugin marketplace add Adbro/professor-brodo
+claude plugin install professor-brodo@professor-brodo
 ```
 
 Don't continue without it. A wrapper without the base skill does nothing.
@@ -95,4 +95,4 @@ Rules for writing it:
 
 ## Changing it later
 
-Edit the wrapper's `SKILL.md` directly. Plugin updates (`/plugin marketplace update design-skills`) never touch it.
+Edit the wrapper's `SKILL.md` directly. Plugin updates (`/plugin marketplace update professor-brodo`) never touch it.
